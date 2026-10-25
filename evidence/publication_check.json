@@ -28,13 +28,19 @@
     "status": "NO_MATCH",
     "scope": "Representative credential/private-key and Windows personal-path patterns in fetched text files; not a comprehensive security certification."
   },
-  "manifest_scope_note": "PUBLIC_MANIFEST.json and evidence/document_update.json retain their pre-publication/generation snapshots. This later record adds publication and user PDF review status. LICENSE and this receipt are additions outside the original V002 manifest.",
+  "manifest_scope_note": "PUBLIC_MANIFEST.json now tracks the published V002 files and documentation additions. evidence/document_update.json retains its generation-time snapshot; this record adds the later user-confirmed PDF review and publication status.",
   "control_source_changed": false,
   "live_api_calls_during_review": 0,
   "robot_motion_during_review": false,
   "remaining": [
-    "record and edit real Gazebo demonstration video",
-    "publish YouTube video and add actual URL to README",
+    "user checks the unlisted video and submitted links from a signed-out/private browser",
     "submit PDF, GitHub URL and YouTube URL to OmniCampus and confirm receipt"
-  ]
+  ],
+  "video_publication": {
+    "url": "https://youtu.be/qV1n4mBg24o",
+    "visibility": "UNLISTED_USER_REPORTED",
+    "duration_seconds": 107,
+    "execution_exit_code": 0,
+    "playback_checked_by_assistant": false
+  }
 }
