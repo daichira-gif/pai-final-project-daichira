@@ -1,0 +1,177 @@
+{
+  "suite": "DEV_EIGHT_CASES_V001",
+  "model": "nvidia/nemotron-3.5-super-vl:free",
+  "evidence_basis": "Read actual saved local result/summary files; no API calls in this collection.",
+  "normal_case_types_confirmed": 4,
+  "rejection_case_types_confirmed": 4,
+  "recorded_attempts": 11,
+  "successful_attempts": 8,
+  "api_error_attempts": 3,
+  "initial_single_batch_all_pass": false,
+  "robot_motion_in_evaluation": false,
+  "scope_note": "Success on eight visible development case types across separate attempts; not held-out accuracy or first-attempt 8/8.",
+  "attempts": [
+    {
+      "id": "N01",
+      "category": "CORRECT_ACCEPT",
+      "expected_result_confirmed": true,
+      "actual_steps": [
+        {
+          "action": "move",
+          "distance_m": 0.1
+        }
+      ],
+      "source": "experiments/step27/eval_20261025_005300_725e3a/summary.json"
+    },
+    {
+      "id": "N02",
+      "category": "API_ERROR",
+      "expected_result_confirmed": false,
+      "actual_steps": [],
+      "source": "experiments/step27/eval_20261025_005300_725e3a/summary.json"
+    },
+    {
+      "id": "N03",
+      "category": "API_ERROR",
+      "expected_result_confirmed": false,
+      "actual_steps": [],
+      "source": "experiments/step27/eval_20261025_011135_986758/summary.json"
+    },
+    {
+      "id": "N03",
+      "category": "CORRECT_ACCEPT",
+      "expected_result_confirmed": true,
+      "actual_steps": [
+        {
+          "action": "rotate",
+          "angle_deg": 30.0
+        },
+        {
+          "action": "move",
+          "distance_m": 0.2
+        }
+      ],
+      "source": "experiments/step27/eval_20261025_012557_df0391/summary.json"
+    },
+    {
+      "id": "N04",
+      "category": "CORRECT_ACCEPT",
+      "expected_result_confirmed": true,
+      "actual_steps": [
+        {
+          "action": "move",
+          "distance_m": 0.1
+        },
+        {
+          "action": "rotate",
+          "angle_deg": 30.0
+        },
+        {
+          "action": "move",
+          "distance_m": 0.1
+        }
+      ],
+      "source": "experiments/step27/eval_20261025_012557_df0391/summary.json"
+    },
+    {
+      "id": "R01",
+      "category": "CORRECT_REJECT",
+      "expected_result_confirmed": true,
+      "actual_steps": [],
+      "source": "experiments/step27/eval_20261025_012557_df0391/summary.json"
+    },
+    {
+      "id": "R02",
+      "category": "CORRECT_REJECT",
+      "expected_result_confirmed": true,
+      "actual_steps": [],
+      "source": "experiments/step27/eval_20261025_012557_df0391/summary.json"
+    },
+    {
+      "id": "R03",
+      "category": "CORRECT_REJECT",
+      "expected_result_confirmed": true,
+      "actual_steps": [],
+      "source": "experiments/step27/eval_20261025_012557_df0391/summary.json"
+    },
+    {
+      "id": "R04",
+      "category": "API_ERROR",
+      "expected_result_confirmed": false,
+      "actual_steps": [],
+      "source": "experiments/step27/eval_20261025_012557_df0391/summary.json"
+    },
+    {
+      "id": "R04",
+      "category": "CORRECT_REJECT",
+      "expected_result_confirmed": true,
+      "actual_steps": [],
+      "source": "experiments/step27/eval_20261025_012953_a50ce8/summary.json"
+    },
+    {
+      "id": "N02",
+      "category": "CORRECT_ACCEPT",
+      "expected_result_confirmed": true,
+      "actual_steps": [
+        {
+          "action": "rotate",
+          "angle_deg": -90.0
+        }
+      ],
+      "source": "experiments/step26/llm_20261025_010954_cfadea89/result.json",
+      "separate_diagnostic_attempt": true
+    }
+  ],
+  "source_sha256": {
+    "experiments/step27/eval_20261025_005300_725e3a/summary.json": "5291d3a82bbac83cc8cd8a1239515fc2bd80d1f835689c0233896089af62aeee",
+    "experiments/step27/eval_20261025_011135_986758/summary.json": "7f640e15229afe400a9868bb38d921957f31287f981bf5053094cc0b4e04a104",
+    "experiments/step27/eval_20261025_012557_df0391/summary.json": "40c30bf464f101c2eb8581e67794f9a1f9897672e1a4e7d2d288f4f1b7b96e0b",
+    "experiments/step27/eval_20261025_012953_a50ce8/summary.json": "e09be68b390fdf8321c3a1a081b9313ed317a6a4c40acb9a0fc6b6daec92f727",
+    "experiments/step26/llm_20261025_010954_cfadea89/result.json": "16f692e5feb41ad99e2af1d40fada0434b3add606894ab0e7dd0613c04368a8e",
+    "experiments/step26/llm_20261025_010954_cfadea89/plan.json": "702809f755a80972016aff49e7a91d9e3e3d200e4eaf0cf07c9e70cfe4c6c37b"
+  },
+  "final_regression": {
+    "source_sha256": {
+      "src/task_executor.py": "cae7c62d54dbc39d38f6f3236abe91999b3cff90c375c34065b724910160399b",
+      "src/llm_plan_openrouter.py": "e1dde9798eacc9479fd5de96add7b101edaed43e74d973a5fc3f48c306235629",
+      "src/pai_final_control/pai_final_control/move_distance.py": "47b989e7e448ca0a65b6b2d8a6f61e6803d85b87a9abdf70067558eb97548962",
+      "src/pai_final_control/pai_final_control/rotate_angle.py": "c107275ea12e49f5a7c72d6cef9feb63d844069738833a7ff42d81f91992db2f"
+    },
+    "all_passed": true,
+    "suites": [
+      {
+        "name": "preparation_fixture_tests",
+        "exit_code": 0,
+        "elapsed_seconds": 4.533
+      },
+      {
+        "name": "process_management_mock",
+        "exit_code": 0,
+        "elapsed_seconds": 71.478
+      },
+      {
+        "name": "invalid_plans",
+        "exit_code": 0,
+        "elapsed_seconds": 5.403
+      },
+      {
+        "name": "validation_boundaries",
+        "exit_code": 0,
+        "elapsed_seconds": 13.452
+      },
+      {
+        "name": "planner_mock",
+        "exit_code": 0,
+        "elapsed_seconds": 8.769
+      },
+      {
+        "name": "evaluation_mock",
+        "exit_code": 0,
+        "elapsed_seconds": 17.465
+      }
+    ],
+    "test_mode": "offline/mock",
+    "live_api_calls": 0,
+    "robot_motion": false
+  }
+}

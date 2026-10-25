@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Physical AI 応用1 最終課題｜開発・検証レポート</title>
+<style>
+:root{--ink:#182b3d;--muted:#516678;--blue:#185b80;--teal:#087b73;--line:#d8e2e8;--paper:#fff;--bg:#eff3f6;--amber:#986016}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP","Yu Gothic","Meiryo",sans-serif;line-height:1.85;font-size:15px}a{color:var(--blue)}.wrap{max-width:1120px;margin:auto;padding:38px 32px}header{background:#142e43;color:white;padding:52px 50px 42px;border-radius:20px 20px 0 0}.eyebrow{font-size:12px;letter-spacing:.14em;color:#a4d9e1;font-weight:bold}h1{font-size:32px;line-height:1.5;margin:16px 0}header p{color:#d5e4ed;max-width:830px}.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.meta span{border:1px solid #526b7d;border-radius:20px;padding:3px 13px;font-size:12px}.paper{background:var(--paper);padding:36px 50px 50px;border-radius:0 0 20px 20px}h2{font-size:23px;border-top:2px solid var(--line);padding-top:26px;margin:44px 0 20px;line-height:1.5}h2 .num{color:var(--teal);font-size:15px;margin-right:12px}h3{font-size:18px;margin:26px 0 8px}p{margin:10px 0 15px}.lead{font-size:17px}.callout{padding:20px 24px;background:#eef7f7;border-left:4px solid var(--teal);margin:22px 0;border-radius:0 9px 9px 0}.note{padding:15px 20px;background:#fff8ec;border-left:4px solid #bd8a31;font-size:14px}.small{font-size:12px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}.card{border:1px solid var(--line);border-radius:10px;padding:18px;background:#f8fbfc}.card strong{display:block;font-size:20px;color:var(--blue)}.card p{font-size:13px;margin:7px 0 0}nav{background:#f5f8fa;padding:20px 24px;border-radius:10px}nav ol{columns:2;margin:8px 0;padding-left:22px}nav li{break-inside:avoid;margin:3px 0}table{width:100%;border-collapse:collapse;font-size:13px;margin:18px 0 22px;table-layout:fixed}th,td{padding:11px 13px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere}th{background:#eaf0f4;font-weight:bold}td:first-child{font-weight:600}tbody tr:nth-child(even){background:#fafcfd}.tag{display:inline-block;border-radius:5px;font-size:11px;line-height:1.6;padding:2px 7px;margin-bottom:3px;font-weight:bold;white-space:nowrap}.ok{color:#075d53;background:#dff3ec}.warn{color:#825216;background:#fff0cf}.todo{color:#556573;background:#e9eef2}code{background:#edf2f5;border-radius:3px;padding:1px 4px;font-family:Consolas,monospace;font-size:.91em;overflow-wrap:anywhere}pre{background:#112c40;color:#e2edf5;padding:20px;border-radius:9px;overflow-x:auto;line-height:1.6;font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere}pre code{background:none;color:inherit;padding:0;font-size:inherit}.formula{font-family:Consolas,monospace;background:#f1f6f9;padding:12px 18px;border-radius:7px;overflow-wrap:anywhere}.timeline{border-left:3px solid #c9dce6;margin:18px 0 25px 8px;padding-left:24px}.timeline article{position:relative;margin-bottom:23px}.timeline article:before{content:"";position:absolute;left:-32px;top:9px;width:13px;height:13px;border-radius:50%;background:var(--teal);border:3px solid white}.timeline h3{margin:0 0 5px}.timeline p{margin:0;font-size:14px}.diagram{width:100%;height:auto;background:#f6f9fb;border:1px solid var(--line);border-radius:12px;margin:15px 0}ul,ol{padding-left:24px}li{margin:6px 0}.hash{font-family:Consolas,monospace;font-size:11px;word-break:break-all}details{border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:18px 0}summary{cursor:pointer;font-weight:bold}footer{padding-top:25px;margin-top:35px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.section-note{color:var(--muted);font-size:13px}button{border:1px solid #aac1cf;background:#fff;color:var(--blue);border-radius:7px;padding:8px 15px;cursor:pointer;font:inherit;font-size:13px}.toolbar{display:flex;justify-content:flex-end;margin:0 0 15px}
+@media(max-width:720px){.wrap{padding:0}header{border-radius:0;padding:32px 23px}h1{font-size:25px}.paper{padding:24px 21px;border-radius:0}.grid{grid-template-columns:1fr}nav ol{columns:1}table{font-size:12px}td,th{padding:9px 7px}h2{font-size:21px}.diagram text{font-size:14px}}
+@page{size:A4;margin:16mm 14mm}@media print{body{background:white;font-size:10pt;line-height:1.65}.wrap{max-width:none;padding:0}header{padding:22px;border-radius:0;background:#142e43!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}h1{font-size:23pt}.paper{padding:0}h2{font-size:16pt;break-after:avoid}h3{break-after:avoid}table{font-size:8.5pt}tr,.card,.callout,.note{break-inside:avoid}nav,.toolbar{display:none}.grid{gap:9px}.card{padding:12px}details{display:block}details>*{display:block}a{color:inherit;text-decoration:none}pre{background:#edf2f5;color:#182b3d}.diagram{max-height:235px}footer{font-size:8pt}}
+</style>
+</head>
+<body><div class="wrap">
+<header><div class="eyebrow">PHYSICAL AI / FINAL PROJECT / DEVELOPMENT REPORT</div>
+<h1>自然言語から行動計画を生成し、<br>検証して動かす移動ロボット</h1>
+<p>Physical AI 応用1 最終課題の取り組み記録。Windows・Docker環境の再現から、ROS 2による距離・角度制御、異常終了への対処、OpenRouter経由のLLM接続、Gazebo上での一連の動作確認までを整理する。</p>
+<div class="meta"><span>作成基準日：2026年10月25日（日本時間）</span><span>TurtleBot3 Burger / Gazebo Classic</span><span>開発用8種類の確認を反映・提出準備版</span></div></header>
+<main class="paper"><div class="toolbar"><button onclick="window.print()">印刷 / PDFとして保存</button></div>
+<p class="lead"><strong>日本語の指示からJSONの行動計画を生成し、検証・ドライラン・人による確認を経て、シミュレータ内のロボットに前進・旋回の複合動作を実行させるところまで到達した。</strong>正常系に加え、走行中の割込み、子プロセス回収、停止指令の送信を検証した。LLMの開発用評価では、API障害後の別試行を含め正常4種類・拒否4種類すべてで期待結果を確認した。APIの可用性、独立評価、提出物の完成・公開・提出は引き続き課題である。</p>
+<div class="grid"><div class="card"><strong>自然言語 → 動作</strong><p>「10cm前進 → 左30度 → 10cm前進」のLLM生成計画を実行し、TASK_SUCCESSを確認。</p></div><div class="card"><strong>走行中の割込み</strong><p>距離ログ0.034mで自動SIGINT。後続ステップ抑止、終了コード130、ゼロ速度送信を確認。</p></div><div class="card"><strong>正常4種・拒否4種</strong><p>再試行を含め全8種類で期待結果を確認。初回一括成功ではなく、API障害3件の履歴を分離して記録。</p></div></div>
+<nav aria-label="目次"><strong>目次</strong><ol><li><a href="#assignment">課題内容のおさらい</a></li><li><a href="#scope">作品の狙いと現在の範囲</a></li><li><a href="#environment">環境・開発基盤</a></li><li><a href="#history">最初から現在までの取り組み</a></li><li><a href="#architecture">システムの仕組み</a></li><li><a href="#verification">試験結果と到達点</a></li><li><a href="#issues">発生した問題と解決</a></li><li><a href="#ingenuity">工夫したこと</a></li><li><a href="#remaining">残る課題と次の作業</a></li><li><a href="#evidence">成果物・証跡・資料の扱い</a></li></ol></nav>
+
+<section id="assignment"><h2><span class="num">01</span>課題内容のおさらい</h2>
+<p>引継ぎ資料に記録された講義課題は、<strong>「AI×ロボティクスによる創造的タスクの実現」</strong>である。AIの利用とロボットによるタスク実行を組み合わせることが求められ、AIは推論のみの利用でもよく、モデルの学習は必須ではない。</p>
+<table><thead><tr><th style="width:23%">項目</th><th>記録されている要件</th></tr></thead><tbody>
+<tr><td>作品</td><td>AIを利用し、ロボットがタスクを実行する作品。</td></tr>
+<tr><td>動作動画</td><td>1〜3分のMP4をYouTubeへアップロード。最低でも限定公開。倍速を使用した場合は明示する。</td></tr>
+<tr><td>コード</td><td>コード一式と実行方法を公開GitHubリポジトリで提示する。</td></tr>
+<tr><td>説明資料</td><td>PDFをOmniCampusへ提出。動画URLとGitHub URLも提出する。</td></tr>
+<tr><td>締切</td><td>2026年11月2日（月）10:00（引継ぎ資料の記録）。</td></tr>
+<tr><td>指定名称</td><td>PDF：<code>説明資料_PAI最終課題_daichira.pdf</code><br>YouTube：<code>PAI最終課題_daichira</code></td></tr>
+<tr><td>公開時の注意</td><td>氏名・所属・メール・認証情報などを含めない。動画の公開設定等は講義指定に合わせ、採点完了まで維持する。</td></tr>
+</tbody></table>
+<p class="section-note">要件の出典は2026年10月21日版および10月24日版の引継ぎ資料。本レポート作成時に講義の課題原票を直接再取得したわけではないため、提出前にOmniCampusの最新案内と照合する。本HTMLは説明資料を作るための詳細な整理版であり、指定PDFや動画の提出完了を意味しない。</p></section>
+
+<section id="scope"><h2><span class="num">02</span>作品の狙いと現在の範囲</h2>
+<p>当初は「自然言語指示と状況認識による自律巡回ロボット」を構想した。開発では、まず再現可能な最小構成を完成させるため、<strong>日本語で指定された前進距離・旋回角度・動作順序を、制約付きの行動列へ変換する</strong>範囲に絞った。</p>
+<p>AIの役割は高レベルの指示解釈と計画生成である。速度制御、目標到達判定、時間上限、プロセス管理、停止処理はPythonとROS 2で実装した。独自学習は行っておらず、外部LLMの推論APIを利用している。</p>
+<div class="callout"><strong>現時点の作品の表現</strong><br>「自然言語で指示した短距離の移動・旋回を、検証済みの行動計画として順次実行するシミュレーションロボット」。計画生成と動作実行の間には人の確認が入る。</div>
+<table><thead><tr><th style="width:24%">実現した範囲</th><th>現時点で含まれない範囲</th></tr></thead><tbody><tr><td>前進・左右旋回・複合動作<br>日本語→JSON→ROS実行<br>入力検証と異常時の後続抑止</td><td>地図上の地点指定、Nav2による経路計画、カメラ認識、障害物の自動回避、周囲を理解しての自律巡回、実機での性能検証。</td></tr></tbody></table>
+<p>前方の障害物に対しては、人が状況を見て右90度回転を指示した。これは人の判断による経路変更であり、ロボットが障害物を検出して回避した実績としては扱わない。</p></section>
+
+<section id="environment"><h2><span class="num">03</span>環境・開発基盤</h2>
+<table><thead><tr><th style="width:26%">構成</th><th>使用環境・設計</th></tr></thead><tbody><tr><td>ホスト</td><td>Windows、PowerShell、Docker Desktop、WSL2。</td></tr><tr><td>コンテナ</td><td>既存の<code>pai_ros2</code>を利用。ROS 2 Humble、Python 3.10系。</td></tr><tr><td>シミュレータ</td><td>Gazebo Classic 11.10.2、TurtleBot3 Burger。ブラウザ経由でGUIを表示。</td></tr><tr><td>新規パッケージ</td><td><code>pai_final_control</code>。既存の<code>physicalai_teleop</code>はCRANE+向けで移動ロボットへ直接流用できず、新設した。</td></tr><tr><td>ソース保存先</td><td><code>/workspace/PAI_final_project</code>。Windows側とbind mountされ、ファイルの読み書きとホスト側での表示を確認。</td></tr><tr><td>ビルド先</td><td><code>/home/ubuntu/pai_final_build</code>。ソースと再生成可能なビルド生成物を分離し、<code>--symlink-install</code>で構築。</td></tr><tr><td>制御トピック</td><td><code>/cmd_vel</code>：速度指令（Twist）。<code>/odom</code>：推定位置・姿勢・速度（Odometry）。</td></tr><tr><td>AI接続</td><td>OpenRouterのChat Completions API。現在のモデル指定は<code>nvidia/nemotron-3.5-super-vl:free</code>。</td></tr></tbody></table>
+<p>作業は既存教材を保持したまま、課題専用ディレクトリで進めた。ソースがWindows側に反映されることは確認したが、コンテナ再作成からの完全復元試験は未実施である。Gazebo上でROSを実行した試験と、物理的なロボット実機の試験は区別する。</p></section>
+
+<section id="history"><h2><span class="num">04</span>最初から現在までの取り組み</h2>
+<div class="timeline">
+<article><h3>環境再現と手動操作の確認｜10月21日まで</h3><p>Windows・Docker・ROS 2・Gazeboの組み合わせを特定。TurtleBot3を起動し、トピックを確認した。低速の前進・停止とOdometryの取得に成功し、開発の出発点を確立した。</p></article>
+<article><h3>保存先の確定と新規パッケージ｜STEP 17〜20</h3><p>既存教材の役割を調査し、専用パッケージを作成。bind mountの保存先を確認し、ソースとビルド先を分離した。colconの引数位置などのビルド問題を修正した。</p></article>
+<article><h3>距離フィードバック制御｜STEP 21</h3><p>開始姿勢への投影変位を使う前進ノードを作成。初期Odometry待機、0.5秒の受信途絶判定、タイムアウト、目標付近での減速を実装。初期未受信試験と、10cm・50cm前進の制御ログを確認した。</p></article>
+<article><h3>旋回フィードバック制御｜STEP 22</h3><p>姿勢からyawを計算し、差分を累積する旋回ノードを作成。左15度・左90度・右90度の動作と終了コードを確認。初期の終了遅延には診断ログを追加して調査した。</p></article>
+<article><h3>JSON計画と検証｜STEP 23</h3><p>許可動作をmoveとrotateに限定し、距離・角度・ステップ数・フィールド・数値型を検査した。既定動作をドライランとし、不正計画3件と境界値等12件の計15件に合格した。</p></article>
+<article><h3>実行プロセスと停止の管理｜STEP 24</h3><p>単純なsubprocess.run中心の実行から、独立したプロセスグループを追跡する方式へ改修。正常・異常終了、子孫プロセス、タイムアウト、反復シグナル等を模擬試験した。初版の6件失敗を受け、テストの起動待ちと振る舞い検証の時間枠を整理したV002が20件に合格した。</p></article>
+<article><h3>実ROSでの複合動作と割込み｜STEP 25</h3><p>停止CLIの時間不足と旋回パラメータ型不一致を実ログから修正。前進→旋回→前進が成功した。手動Ctrl+Cは目標到達後や次ステップ起動中に入ることがあったため、距離ログに基づく自動割込みへ切り替えた。さらにノードのシグナル処理とROS終了順序を修正した。</p></article>
+<article><h3>OpenRouterによる計画生成とE2E実行｜STEP 26</h3><p>構造化出力、厳密なJSON解析、既存検証器、ドライランを接続。最初に指定したモデルは404となり、別のNVIDIA無料モデルへ明示的に変更した。日本語指示から生成した3ステップ計画を実行し、停止処理まで成功した。</p></article>
+<article><h3>正常・拒否ケース評価｜STEP 27／現在</h3><p>正常4件・拒否4件の開発用評価を準備。N01は成功、N02はAPIエラー後の別試行で成功。残り6件の再開ではN03の502を経験した後、別試行でN03・N04・R01〜R03が成功した。R04もAPI障害後の単独再試行で正しく拒否し、全8種類の期待結果を確認した。</p></article>
+</div></section>
+
+<section id="architecture"><h2><span class="num">05</span>システムの仕組み</h2>
+<svg class="diagram" viewBox="0 0 900 310" role="img" aria-labelledby="diagram-title diagram-desc"><title id="diagram-title">計画生成と動作実行の分離</title><desc id="diagram-desc">自然言語、LLM、検証とドライランを経て人が確認し、実行管理からROS制御とGazeboへ進む。Odometryが制御へ戻る。</desc><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#51778e"/></marker></defs>
+<g font-family="sans-serif" font-size="16" text-anchor="middle"><g fill="#e7f2f5" stroke="#9ebbc9"><rect x="30" y="45" width="210" height="66" rx="9"/><rect x="335" y="45" width="210" height="66" rx="9"/><rect x="640" y="45" width="230" height="66" rx="9"/></g><g fill="#182b3d"><text x="135" y="72">日本語の指示</text><text x="135" y="95" font-size="13">距離・方向・順序</text><text x="440" y="72">LLMによる計画生成</text><text x="440" y="95" font-size="13">OpenRouter / JSON</text><text x="755" y="72">検証・ドライラン</text><text x="755" y="95" font-size="13">構造・制約を検査</text></g>
+<g fill="#e5f3ed" stroke="#99c9ba"><rect x="640" y="190" width="230" height="66" rx="9"/><rect x="335" y="190" width="210" height="66" rx="9"/><rect x="30" y="190" width="210" height="66" rx="9"/></g><g fill="#182b3d"><text x="755" y="217">人の確認 → 実行管理</text><text x="755" y="240" font-size="13">別コマンドで --execute</text><text x="440" y="217">ROS 2 制御ノード</text><text x="440" y="240" font-size="13">move_distance / rotate_angle</text><text x="135" y="217">Gazebo / TurtleBot3</text><text x="135" y="240" font-size="13">速度指令で動作</text></g>
+<g stroke="#51778e" stroke-width="2" fill="none" marker-end="url(#arrow)"><path d="M240 78H327"/><path d="M545 78H632"/><path d="M755 111V182" stroke-dasharray="5 4"/><path d="M640 223H553"/><path d="M335 223H248"/><path d="M135 256V287H440V264"/></g><text x="287" y="282" font-size="12" fill="#516678">/odom フィードバック</text><text x="809" y="155" font-size="12" fill="#516678">自動実行しない</text></g></svg>
+<h3>5.1 行動計画を小さな共通形式に固定</h3>
+<pre><code>{
+  "schema_version": 1,
+  "task_id": "example_move_rotate_move",
+  "steps": [
+    {"action": "move", "distance_m": 0.1},
+    {"action": "rotate", "angle_deg": 30.0},
+    {"action": "move", "distance_m": 0.1}
+  ]
+}</code></pre>
+<p>LLMの応答は受理・拒否の判断を含む形式とし、受理時にはホスト側でスキーマ番号とタスクIDを付ける。LLMの出力をシェルコマンドとして実行せず、検証後の値から固定された引数配列を組み立てる。</p>
+<table><thead><tr><th style="width:28%">実行計画の制約</th><th>仕様</th></tr></thead><tbody><tr><td>許可動作</td><td><code>move</code>、<code>rotate</code>のみ。1〜8ステップ。</td></tr><tr><td>前進距離</td><td>1ステップ0.05〜0.5m。負値・ゼロ・文字列・真偽値・非有限値を拒否。</td></tr><tr><td>旋回角度</td><td>絶対値5〜180度。正が左、負が右。</td></tr><tr><td>余分な指定</td><td>速度等の追加フィールドを拒否。重複キーやMarkdown付きJSONもLLM解析段階で拒否。</td></tr><tr><td>固定実行設定</td><td>前進速度0.04m/s、旋回最大角速度0.30rad/s、ノード上限35秒、外側の各ステップ上限45秒。</td></tr><tr><td>起動条件</td><td>既定はドライラン。動作実行には別途<code>--execute</code>を指定する。</td></tr></tbody></table>
+<p class="section-note">この表は計画実行器の制限である。下位ノード単体のパラメータ上限とは別であり、LLM経由の実行はより狭い範囲に制限している。</p>
+<h3>5.2 Odometryを使った距離・角度制御</h3>
+<p>直進では、開始位置からの変位を開始方向へ投影する。時間×速度だけで移動量を推定せず、受信した推定位置を使って残距離を更新する。</p><div class="formula">d = (x − x₀) cos θ₀ + (y − y₀) sin θ₀</div>
+<p>旋回では、クォータニオンからyawを計算し、前回との差分を正規化して累積する。目標付近では減速し、直進は残距離1cm以下、旋回は角度誤差1.5度以内を到達条件とする。</p>
+<h3>5.3 異常時の実行打切りと停止</h3>
+<p>各ROSコマンドを独立プロセスグループで起動し、管理対象グループへSIGINT、必要ならSIGTERM、最後の手段としてSIGKILLを送る。実際に起動した直接子プロセスを回収し、グループが残存している場合は成功にしない。失敗後は後続ステップを開始しない。</p>
+<p>最後に別の停止Publisherを起動し、購読者との接続を待ってゼロ速度を10Hzで5回送信する。CLIの時間枠は15秒。停止コマンドの正常終了もタスク成功条件に含めるが、Odometryでの停止確認は別に行う。</p>
+<div class="note"><strong>停止の証拠を分ける：</strong>プロセス回収、ゼロ速度Publish成功、停止後のOdometry観測はそれぞれ別の確認である。<code>STOP_COMMAND_OK</code>だけで物理停止を保証したとはしない。独立セッションに離脱したプロセスや下位装置の挙動まで、この実装だけで保証するものではない。</div></section>
+
+<section id="verification"><h2><span class="num">06</span>試験結果と到達点</h2>
+<h3>6.1 自動試験・回帰試験</h3>
+<table><thead><tr><th style="width:25%">試験</th><th style="width:18%">確認結果</th><th>確認した内容と範囲</th></tr></thead><tbody>
+<tr><td>STEP 23 入力検証</td><td><span class="tag ok">3 + 12件 PASS</span></td><td>未知動作、過大距離、速度の追加、負値・ゼロ・文字列・NaN・Infinity・bool、ステップ数、境界値等。V002導入時にも元スクリプトを再実行。</td></tr>
+<tr><td>実行プロセス管理 V002</td><td><span class="tag ok">20件 PASS</span></td><td>模擬ROSコマンドによる正常・非ゼロ終了、タイムアウト、SIGINT/SIGTERM、子孫残存、停止失敗等。実ROS試験とは別。</td></tr>
+<tr><td>ノードシグナル修正</td><td><span class="tag ok">20件 PASS</span></td><td>両ノードの正常・割込み・例外・初期化失敗・破棄失敗・無効contextと、パッチ適用/ロールバック等の模擬試験。</td></tr>
+<tr><td>OpenRouterプランナー</td><td><span class="tag ok">30件 PASS</span></td><td>応答解析、禁止入力、秘密情報の除去、ドライラン、実行抑止、ハッシュ不一致、モデル固定等。モデル変更後にユーザー環境で再実行。</td></tr>
+<tr><td>評価スクリプト</td><td><span class="tag ok">8件 PASS</span></td><td>APIを模擬した開発側試験。方向・順序の誤り、誤受理、誤拒否、API障害の分類等。実モデル8件の成功を意味しない。</td></tr>
+</tbody></table>
+<p class="section-note">各件数は異なる版・対象・実行環境の試験記録である。合計してシステム全体の成功率にしない。2026年10月25日に現行版の最終回帰試験を実行し、準備処理9件・プロセス管理20件・不正計画3件・境界値12件・プランナー30件・評価処理8件の、6群82件すべてが合格した。これらはオフライン・模擬試験であり、LLMの一般精度を示す値ではない。</p>
+<h3>6.2 Gazebo上での実ROS動作</h3>
+<table><thead><tr><th style="width:25%">試験</th><th style="width:27%">主な実測・出力</th><th>評価</th></tr></thead><tbody>
+<tr><td>初期Odometry未受信</td><td><code>INITIAL_ODOMETRY_TIMEOUT</code><br>終了コード1、ゼロ速度送信</td><td>リマッピング先で確認。走行中の通信断試験とは区別。</td></tr>
+<tr><td>前進・旋回単体</td><td>10cm・50cm前進。左15度は13.54度、左90度は88.62度、右90度は−88.57度（初期試験記録）。</td><td>制御ログ上の到達を確認。後続の右90度試験では−88.61度。</td></tr>
+<tr><td>現行ノードの固定複合動作</td><td>約0.090m → 左28.69度 → 約0.091m<br><code>TASK_SUCCESS</code></td><td>3ステップ、ノード終了処理、各グループ回収、停止Publisherの正常終了を確認。</td></tr>
+<tr><td>走行中の自動割込み</td><td>距離0.034mでSIGINT<br><code>STOP: SIGNAL_SIGINT</code><br><code>NODE_CLEANUP_OK</code><br>終了コード130</td><td>第1ステップは成功扱いにせず、第2ステップを開始しない。例外なし、グループ回収と停止Publish成功。</td></tr>
+<tr><td>LLM生成計画のE2E実行</td><td>約0.091m → 左28.52度 → 約0.091m<br>全ステップ成功、<code>TASK_SUCCESS</code></td><td>日本語→LLM→検証→ドライラン→人の確認→ROS動作を一連で確認。</td></tr>
+</tbody></table>
+<p>距離・角度は各ノードの<strong>停止判定時点のOdometry由来のログ値</strong>である。停止後の最終到達位置やGazeboのground truthによる測定ではない。0.1mに対して約0.09mで到達となるのは、残距離1cmの条件を用いているためである。</p>
+<p>LLM生成計画の実行後に観測した4サンプルでは、前進速度の絶対値は最大約<strong>4.44×10⁻⁶ m/s</strong>、yaw角速度の絶対値は最大約<strong>5.42×10⁻⁸ rad/s</strong>だった。シミュレータ内でほぼ静止している状態に整合する。ただし、割込みから停止までの時間や停止距離を連続測定した結果ではない。</p>
+<h3>6.3 LLMの8件評価：実際に得られた結果</h3>
+<table><thead><tr><th style="width:10%">ID</th><th style="width:35%">指示・期待</th><th>結果</th></tr></thead><tbody>
+<tr><td>N01</td><td>10cm前進 → move 0.1m</td><td><span class="tag ok">初回成功</span>正しい計画を生成し、ドライランPASS。</td></tr>
+<tr><td>N02</td><td>その場で右90度 → rotate −90度</td><td><span class="tag warn">初回API障害</span><code>API_ERROR_IN_RESPONSE</code>。別の診断試行では−90.0度を正しく生成（再試行成功）。</td></tr>
+<tr><td>N03</td><td>左30度 → 20cm前進</td><td><span class="tag ok">再試行成功</span>先行試行はHTTP 502。後の試行では左30.0度→前進0.2mを正しく生成。</td></tr>
+<tr><td>N04</td><td>10cm前進 → 左30度 → 10cm前進</td><td><span class="tag ok">評価でも成功</span>3ステップを正しく生成。別のSTEP 26ではE2E実行にも成功済み。</td></tr>
+<tr><td>R01</td><td>少し前進 → 距離不明のため拒否</td><td><span class="tag ok">正しい拒否</span>「移動距離が指定されていません」。</td></tr>
+<tr><td>R02</td><td>1m前進 → 1ステップ上限超過のため拒否</td><td><span class="tag ok">正しい拒否</span>「1回の移動距離が0.5mを超えています」。分割による回避も認めない評価方針。</td></tr>
+<tr><td>R03</td><td>10cm後退 → 非対応のため拒否</td><td><span class="tag ok">正しい拒否</span>「後退は未対応の動作です。」</td></tr>
+<tr><td>R04</td><td>秒速1mで10cm前進 → 速度指定のため拒否</td><td><span class="tag ok">再試行で正しい拒否</span>API障害後、「速度指定は未対応です」と拒否。</td></tr>
+</tbody></table>
+<p>初回評価は<strong>COMPLETED=2/8、PASS=1、FAIL=1、NOT_RUN=6、API_ERRORS=1</strong>。残り6件の再開は<strong>COMPLETED=1/6、PASS=0、FAIL=1、NOT_RUN=5、API_ERRORS=1</strong>だった。その後、6件の再開試行はPASS=5・API_ERRORS=1、R04単独再試行はPASS=1・API_ERRORS=0。ここでのFAILにはAPI障害が含まれるため、モデルの意味理解失敗率とは一致しない。</p>
+<div class="note">再試行を含め、全8種類で少なくとも1回の期待結果を確認した。対応する記録は計11試行で、成功8件・API障害3件。初回一括8/8成功という結果ではない。また、これは事前に見えている少数の開発用ケースで、未知の指示に対する一般化性能を測る独立テストではない。</div></section>
+
+<section id="issues"><h2><span class="num">07</span>発生した問題と解決</h2>
+<table><thead><tr><th style="width:24%">問題</th><th style="width:38%">診断と対応</th><th>確認結果・残る制約</th></tr></thead><tbody>
+<tr><td>初版プロセス試験6件失敗</td><td>模擬コマンドのPython起動中に期限やシグナルが到達し、期待した振る舞いに入る前に終了した。V002で起動準備と振る舞い検証の時間枠を整理。</td><td>V002は20件PASS。本番の期限には起動時間を含める試験も維持した。</td></tr>
+<tr><td>停止コマンドが5秒でタイムアウト</td><td>ROS CLIの起動・接続にも時間がかかる。単独コマンドで6.591秒を観測し、停止側の枠を15秒へ変更。</td><td>stop_robot単体で8.844秒、終了コード0を確認。遅延のあるCLIに依存する構造は残る。</td></tr>
+<tr><td>角度30がROS INTEGERになる</td><td>ノードはDOUBLEを宣言していた。実行器で<code>float(angle_deg)</code>に変換し、<code>angle_deg:=30.0</code>を生成。</td><td>同じ整数入りJSONで複合動作が成功。</td></tr>
+<tr><td>SIGINT後に無効なROS contextへPublish</td><td>rclpyの標準シグナル処理によってcontextが先に終了した。標準ハンドラを無効化し、フラグ設定→ゼロ速度送信→ノード破棄→shutdownの順序を管理。</td><td>自動割込みで例外なし・NODE_CLEANUP_OKを確認。制御クラスは保持してmainのライフサイクルを修正。</td></tr>
+<tr><td>手動割込みの時点が不安定</td><td>目標到達後や次動作の起動中にCtrl+Cが入った。ログ距離0.03m以上を検出して自動送信する試験を追加。</td><td>0.034mで走行中の割込みを再現。SIGTERMへの段階的な移行も記録。</td></tr>
+<tr><td>一度ODOMETRY_LOSTが先行</td><td>受信周期を調査し約14〜16Hz、観測最大間隔0.132秒。0.5秒の受信監視条件は緩めず再試験。</td><td>再試験ではSIGNAL_SIGINTで停止。以前の途絶判定の根本原因は未確定。</td></tr>
+<tr><td>最初の希望モデルが404</td><td><code>nemotron-3-super-120b-a12b:free</code>は最小リクエストでもNvidia側のProviderエラー。別モデルへ明示的に切り替え、プランナーとテストの固定値を更新。</td><td><code>nemotron-3.5-super-vl:free</code>で計画生成成功。元モデルの恒久的廃止を確認したわけではない。</td></tr>
+<tr><td>追加評価でAPI障害が再発</td><td>応答内errorは一般化されたエラー名で保存されており、詳細を失っていた。メモリ上だけの診断処理で1件再試行した。</td><td>N02・N03・R04は後の別試行で期待結果を確認。元の応答内エラーの原因は不明であり、レート制限と断定できない。</td></tr>
+</tbody></table></section>
+
+<section id="ingenuity"><h2><span class="num">08</span>ここまで工夫したこと</h2>
+<h3>① AIの自由度を、検証できる行動形式に落とした</h3><p>自然言語の柔軟さを入口に残しつつ、出口を前進と旋回の小さなJSON形式に限定した。LLMが直接速度を出す構成を避け、行動の意味と数値を人が読めるようにした。禁止動作や余分なフィールドを境界で拒否することで、誤出力の扱いを明確にした。</p>
+<h3>② 生成・検証・実行を分離した</h3><p>プランナーには実行用オプションを用意せず、既存の検証器と実行器のドライランを通した計画だけを保存する。意味の確認と周囲の確認を経て、別コマンドで動かす。構造検証の合格を、指示の意味の正しさや経路の安全性と取り違えない設計にした。</p>
+<h3>③ 「動いた」だけでなく、異常時に先へ進まないことを試した</h3><p>成功例に加え、非ゼロ終了、タイムアウト、子孫プロセス残存、停止コマンド失敗、繰り返しシグナルを試験した。異常発生時に後続ステップを開始しないこと、割込みを成功として報告しないことまで検証対象にした。</p>
+<h3>④ 停止を複数の証拠で確認した</h3><p>ノード自身のゼロ速度送信と、実行器の独立した停止Publisherを組み合わせた。さらに、Publish成功とは別に停止後のOdometryを観測した。結果を過大に解釈しないため、ログにもPHYSICAL_STOP_UNCONFIRMEDを残した。</p>
+<h3>⑤ 実環境で露出した問題を、小さな変更で修正した</h3><p>停止時間枠、ROSパラメータ型、シグナル処理順序の問題を実ログから切り分けた。検証済みの制御アルゴリズムを全面的に書き直さず、問題のある境界を修正した。修正前のバックアップとSHA-256を使い、意図しない版への適用を防いだ。</p>
+<h3>⑥ 試験条件とモデル変更を追跡可能にした</h3><p>日時と識別子を含む実行ディレクトリへ、要求・モデル出力・計画・ドライラン・結果を分けて保存した。APIキーは非表示入力とし、認証ヘッダーを記録しない。自動的な再試行や別モデルへの切替を避け、診断目的の再試行は初回評価と分離した。</p>
+<h3>⑦ 段階ごとに検証し、保存可能な成果へ積み上げた</h3><p>手動操作→単体制御→入力検証→模擬プロセス→実ROSの複合動作→LLM接続という順序で開発した。ソースを永続化先へ配置し、チェックポイントZIPとハッシュを残した。障害が生じても、どの層まで確認できているかを説明できるようにした。</p></section>
+
+<section id="remaining"><h2><span class="num">09</span>残る課題と次の作業</h2>
+<table><thead><tr><th style="width:12%">優先</th><th style="width:28%">残る課題</th><th>完了の目安</th></tr></thead><tbody>
+<tr><td>P0</td><td>提出要件の最終照合</td><td>課題原票で、シミュレーション作品の扱い、提出設定、期限・名称を確認する。現時点で要件充足や合格を断定しない。</td></tr>
+<tr><td>P0</td><td>1〜3分の動画制作</td><td>指示入力、生成計画、確認、Gazeboでの動作、結果を一つの流れで示す。AIの役割が見えるようにする。</td></tr>
+<tr><td>P0</td><td>公開GitHubとREADME</td><td>最終版ソース、依存環境、ビルド・実行手順、制限、評価ログの所在を整理。認証情報・個人情報・不要なバックアップを公開対象から除く。</td></tr>
+<tr><td>P0</td><td>説明PDFと実提出</td><td>本レポートをもとに要点を絞り、図・結果・限界を記載。指定PDF、YouTube URL、GitHub URLを提出する。</td></tr>
+<tr><td>P1</td><td>評価結果の確定保存と独立評価</td><td>開発用8種類の確認は完了。全試行のAPI障害を保持した集計を保存する。一般化性能を評価する場合は、新規の独立ケースと試行条件を事前に定める。</td></tr>
+<tr><td>P1</td><td>APIエラーの診断情報</td><td>秘密情報を除いたエラーコード・主要メッセージ・Provider名を残す。パーサ変更時はテストとハッシュ固定を同時に更新する。</td></tr>
+<tr><td>P1</td><td>最終版の確認と再現性</td><td>現行版の回帰試験6群82件は合格し、ソースのSHAと結果を保存済み。残る確認は、新規環境での再ビルド・起動手順である。</td></tr>
+<tr><td>P2</td><td>停止遅延・停止距離の定量化</td><td>割込み時刻から速度低下までを連続計測する。CLI起動に依存しない停止Publisherや下位層ウォッチドッグを検討する。</td></tr>
+<tr><td>P2</td><td>環境認識・経路計画への拡張</td><td>/scanによる停止、Nav2等を別工程として設計する。現在の作品の実績に含めない。</td></tr>
+</tbody></table>
+<p>追加の走行を増やすより、まず既に成功した自然言語→計画→動作を、提出物として再現可能かつ分かりやすく提示することを優先する。無料モデルの応答可用性に依存するため、動画撮影時には成功済みの実行証跡も保管し、API障害を作品の意味理解失敗と混同しない説明を準備する。</p></section>
+
+<section id="evidence"><h2><span class="num">10</span>成果物・証跡・資料の扱い</h2>
+<h3>主な実装</h3><table><thead><tr><th style="width:45%">プロジェクト内のファイル</th><th>役割</th></tr></thead><tbody><tr><td><code>src/task_executor.py</code></td><td>計画検証、ドライラン、順次実行、プロセス管理、停止。</td></tr><tr><td><code>src/pai_final_control/pai_final_control/move_distance.py</code></td><td>Odometryによる前進と停止。</td></tr><tr><td><code>src/pai_final_control/pai_final_control/rotate_angle.py</code></td><td>Odometryによる旋回と停止。</td></tr><tr><td><code>src/llm_plan_openrouter.py</code></td><td>日本語→構造化計画、検証・ドライラン、結果保存。</td></tr><tr><td><code>experiments/step23〜step27/</code></td><td>試験、実行結果、評価スクリプト等。</td></tr></tbody></table>
+<h3>代表的な証跡の所在</h3><p>以下はユーザー環境のプロジェクトルート<code>/workspace/PAI_final_project</code>からの相対パスである。本HTMLにコードやログ本体を同梱したものではない。</p>
+<ul><li>LLM生成・E2E実行で使った計画：<code>experiments/step26/llm_20261025_001711_5b4dbe6e/plan.json</code></li><li>修正後の自動割込みログ：<code>experiments/step25/auto_interrupt_20261024_232105_153cf8.log</code></li><li>初回8件評価：<code>experiments/step27/eval_20261025_005300_725e3a/summary.json</code></li><li>N02の別診断試行：<code>experiments/step26/llm_20261025_010954_cfadea89/result.json</code></li><li>N03で502となった再開試行：<code>experiments/step27/eval_20261025_011135_986758/summary.json</code></li><li>6件再開（5成功・1 API障害）：<code>experiments/step27/eval_20261025_012557_df0391/summary.json</code></li><li>R04単独再試行（正しい拒否）：<code>experiments/step27/eval_20261025_012953_a50ce8/summary.json</code></li><li>チェックポイント：<code>checkpoints/PAI_STEP26_E2E_20261025_003400_140560.zip</code>（70ファイルの保存完了出力）。STEP 27開始前の保存であり、その後の評価を含むとは限らない。</li></ul>
+<details><summary>版を識別するSHA-256（記録値）</summary><p class="small">ソース・チェックポイントの記録値。ユーザーが報告したハッシュと開発時の対応情報に基づく。本レポート作成時にユーザー環境の全ファイルを再取得・再計算したものではない。</p><table><thead><tr><th style="width:30%">対象</th><th>SHA-256</th></tr></thead><tbody>
+<tr><td>task_executor.py</td><td class="hash">cae7c62d54dbc39d38f6f3236abe91999b3cff90c375c34065b724910160399b</td></tr>
+<tr><td>move_distance.py</td><td class="hash">47b989e7e448ca0a65b6b2d8a6f61e6803d85b87a9abdf70067558eb97548962</td></tr>
+<tr><td>rotate_angle.py</td><td class="hash">c107275ea12e49f5a7c72d6cef9feb63d844069738833a7ff42d81f91992db2f</td></tr>
+<tr><td>llm_plan_openrouter.py</td><td class="hash">e1dde9798eacc9479fd5de96add7b101edaed43e74d973a5fc3f48c306235629</td></tr>
+<tr><td>STEP 26チェックポイント</td><td class="hash">91f735becf9e2070cb25d0babec71418648fb4e4a4f375a6c3076599f134e811</td></tr></tbody></table></details>
+<h3>このレポートが根拠とする資料</h3>
+<ol><li><code>PAI_Final_Project_Reproduction_and_Handoff_20261021 (5).md</code>：課題要件、初期環境、手動操作、当初の開発方針。</li><li><code>貼り付けたテキスト（1）(20261024-100459).txt</code>：STEP 17〜23、永続化確認、新規パッケージ、前進・旋回試験。</li><li><code>貼り付けたテキスト（1）(20261024-105943).txt</code>：STEP 23合格後の入力制約とSTEP 24に向けた監査・設計。</li><li>本チャットで共有されたSTEP 24〜27の実行ログ：導入試験、修正、Gazebo上の動作、OpenRouter応答、評価の中断、チェックポイント保存。</li></ol>
+<p class="section-note">初期資料の「未実装」「未確認」は、その資料の作成時点の状態である。本レポートでは後続ログを優先して更新した。未提示の動画・公開リポジトリ・提出完了・実機動作を、完了済みの実績として追加していない。</p></section>
+<footer>Physical AI 応用1 最終課題 開発・検証レポート｜2026-10-25｜本書は作業記録を整理したHTML成果物。外部フォント・外部JavaScript・外部画像に依存せず、オフラインで閲覧・印刷できる。</footer>
+</main></div></body></html>

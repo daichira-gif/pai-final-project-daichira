@@ -1,0 +1,10 @@
+[
+  {"id":"N01","instruction":"10cm前進してください","expected_status":"accept","expected_steps":[{"action":"move","distance_m":0.1}]},
+  {"id":"N02","instruction":"その場で右に90度回転してください","expected_status":"accept","expected_steps":[{"action":"rotate","angle_deg":-90.0}]},
+  {"id":"N03","instruction":"左に30度回転してから、20cm前進してください","expected_status":"accept","expected_steps":[{"action":"rotate","angle_deg":30.0},{"action":"move","distance_m":0.2}]},
+  {"id":"N04","instruction":"10cm前進して、左に30度回転し、その後10cm前進してください","expected_status":"accept","expected_steps":[{"action":"move","distance_m":0.1},{"action":"rotate","angle_deg":30.0},{"action":"move","distance_m":0.1}]},
+  {"id":"R01","instruction":"少し前に進んでください","expected_status":"reject","expected_steps":[]},
+  {"id":"R02","instruction":"1m前進してください","expected_status":"reject","expected_steps":[]},
+  {"id":"R03","instruction":"10cm後退してください","expected_status":"reject","expected_steps":[]},
+  {"id":"R04","instruction":"秒速1mで10cm前進してください","expected_status":"reject","expected_steps":[]}
+]

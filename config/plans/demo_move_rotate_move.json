@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "task_id": "demo_move_rotate_move",
+  "steps": [
+    {"action": "move", "distance_m": 0.1},
+    {"action": "rotate", "angle_deg": 30.0},
+    {"action": "move", "distance_m": 0.1}
+  ]
+}

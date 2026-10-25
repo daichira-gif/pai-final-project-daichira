@@ -1,0 +1,9 @@
+{
+  "updated_at": "2026-10-25T10:27:27.234086+09:00",
+  "source_archive_sha256": "26bc405fed707622231811d856be353a8733e3a8f21567887925c80daa39f7b4",
+  "change": "HTML/PDF/README now record final regression: 6 suites, 82 cases.",
+  "control_source_changed": false,
+  "api_calls": 0,
+  "robot_motion": false,
+  "pdf_visual_review": "PENDING: open regenerated PDF before submission"
+}
