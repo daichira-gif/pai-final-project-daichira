@@ -2,10 +2,10 @@
   "automatic_secret_pattern_scan": "PASS (limited patterns; manual review still required)",
   "raw_api_outputs_included": false,
   "raw_evaluation_logs_included": false,
-  "public_published": false,
+  "public_published": true,
   "files_sha256": {
     ".gitignore": "5fa7b98bffb0b2956fcdc14b9d78b23d4858fcec230cd4a5cdd95cd3980a577d",
-    "README.md": "57f3881c7dadecf09aa2cbe954b8a2692027a1e72aff5bb34a325f674649bf79",
+    "README.md": "a1fd862c7dc619b49f32c14fcebdc9481e18f2a50527b2bebd78bc9aaf3044b4",
     "config/plans/demo_move_rotate_move.json": "cb1671ea2e4f190b755669aed09669dfc32fe0a4b62b403cef1f64a6db68055f",
     "docs/GITHUB_PUBLISH_JA.md": "0ef97d24dbc3ad029b8a237367505a18acdbd7ef2d9c366ff4842078f03e9d3c",
     "docs/SUBMISSION_CHECKLIST_JA.md": "30cf2be25fb0eab26691251a07052d688fab8137fa9b779f6b87b3659fd31887",
@@ -30,6 +30,11 @@
     "src/pai_final_control/resource/pai_final_control": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "src/pai_final_control/setup.cfg": "ec7f7bde8185ba70c13e635369afeac0c14418086530f9cb3ada49d9def363d1",
     "src/pai_final_control/setup.py": "bf37936c3d464cec93d3e0d7adf633cb78e4ec57312ad0f2ddb85a8d2d2b930e",
-    "src/task_executor.py": "cae7c62d54dbc39d38f6f3236abe91999b3cff90c375c34065b724910160399b"
-  }
+    "src/task_executor.py": "cae7c62d54dbc39d38f6f3236abe91999b3cff90c375c34065b724910160399b",
+    "evidence/demo_video.json": "618ebe7736eae38b17f8432298a3a54c8bfa21fe36b70d6afa4b603bfc446d27",
+    "evidence/publication_check.json": "4df6de1006c726a90a8e8d6c5adf12e69825603a73495ccbcb3a7d737ab9275a",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "manifest_scope": "Published V002 files and subsequent documentation additions; manifest excludes its own bytes.",
+  "video_url": "https://youtu.be/qV1n4mBg24o"
 }
