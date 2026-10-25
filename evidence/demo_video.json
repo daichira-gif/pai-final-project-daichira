@@ -1,0 +1,47 @@
+{
+  "record_date_jst": "2026-10-25",
+  "video_url": "https://youtu.be/qV1n4mBg24o",
+  "intended_title": "PAI最終課題_daichira",
+  "duration_seconds": 107,
+  "duration_basis": "User reported a 1 minute 47 second recording.",
+  "visibility": "UNLISTED_USER_REPORTED",
+  "recording_sequence": "Japanese instruction -> AI plan generation -> validation/dry run -> human confirmation -> robot execution -> post-stop odometry",
+  "task_id": "llm_20261025_123109_836d6f9f",
+  "instruction": "10cm前進して、左に30度回転し、その後10cm前進してください",
+  "steps": [
+    {
+      "action": "move",
+      "distance_m": 0.1
+    },
+    {
+      "action": "rotate",
+      "angle_deg": 30
+    },
+    {
+      "action": "move",
+      "distance_m": 0.1
+    }
+  ],
+  "generation_exit_code": 0,
+  "execution": {
+    "step_success": [
+      1,
+      2,
+      3
+    ],
+    "stop_command": "STOP_COMMAND_OK",
+    "task_result": "TASK_SUCCESS",
+    "exit_code": 0,
+    "basis": "User-provided grep output from the current take's execution.log and VIDEO_EXECUTOR_EXIT_CODE."
+  },
+  "post_stop_odometry": {
+    "samples_shared": 3,
+    "max_abs_linear_x_m_s": 0.0000026544328119228255,
+    "max_abs_angular_z_rad_s": 1.8903791021607974e-7,
+    "interpretation": "Consistent with near-zero motion in simulation; does not quantify stopping distance or stopping latency.",
+    "basis": "User-shared samples after the recorded execution."
+  },
+  "assistant_video_playback_review": "NOT_PERFORMED: video page could not be retrieved by the web lookup tool.",
+  "omnicampus_submission": "NOT_CONFIRMED",
+  "control_source_changed": false
+}
