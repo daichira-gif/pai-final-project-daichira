@@ -1,0 +1,40 @@
+{
+  "review_date_jst": "2026-10-25",
+  "repository_url": "https://github.com/daichira-gif/pai-final-project-daichira",
+  "publication_status": "PUBLIC",
+  "v002_manifest_files_verified": 27,
+  "v002_file_sha256_status": "MATCH",
+  "gitignore_restored_commit": "8b44b5907dd5392b84a7124721c937a0710ca2cc",
+  "license_file_observed": "Apache License, Version 2.0",
+  "pdf_visual_review": {
+    "status": "USER_CONFIRMED_PASS",
+    "basis": "User confirmed all five pages, final regression statement, and account daichira in this chat."
+  },
+  "final_regression": {
+    "suites": 6,
+    "test_cases": 82,
+    "status": "PASS",
+    "basis": "Saved offline/mock suite exit codes and user-provided case counts; no tests re-run during publication check."
+  },
+  "development_evaluation": {
+    "normal_case_types": 4,
+    "rejection_case_types": 4,
+    "attempts": 11,
+    "successful_attempts": 8,
+    "api_errors": 3,
+    "scope": "Visible development cases across separate attempts; not initial-batch 8/8 or held-out accuracy."
+  },
+  "secret_pattern_scan": {
+    "status": "NO_MATCH",
+    "scope": "Representative credential/private-key and Windows personal-path patterns in fetched text files; not a comprehensive security certification."
+  },
+  "manifest_scope_note": "PUBLIC_MANIFEST.json and evidence/document_update.json retain their pre-publication/generation snapshots. This later record adds publication and user PDF review status. LICENSE and this receipt are additions outside the original V002 manifest.",
+  "control_source_changed": false,
+  "live_api_calls_during_review": 0,
+  "robot_motion_during_review": false,
+  "remaining": [
+    "record and edit real Gazebo demonstration video",
+    "publish YouTube video and add actual URL to README",
+    "submit PDF, GitHub URL and YouTube URL to OmniCampus and confirm receipt"
+  ]
+}
