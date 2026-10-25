@@ -5,6 +5,12 @@ Physical AI 応用1 最終課題。OmniCampusアカウント：`daichira`。
 日本語 → OpenRouter LLM → JSON → 入力検証 → ドライラン → 人による確認 → ROS 2 → Gazebo内のTurtleBot3、という構成です。
 LLMの学習は行わず、推論APIを利用します。速度制御と停止は決定論的なPythonコードで実装しています。
 
+## デモ動画
+
+[日本語指示から計画生成・実行・停止までのデモ](https://youtu.be/qV1n4mBg24o)
+
+日本語の指示 → AIによるJSON計画生成 → 検証・ドライラン → 人による確認 → 前進・左旋回・前進 → 停止確認を、一続きで撮影しました。動画は1分47秒、限定公開です（時間・公開設定は投稿者の報告）。対応する実行では全3ステップ、停止コマンド、TASK_SUCCESS、終了コード0を確認しています。
+
 ## 確認したこと
 
 - 「10cm前進 → 左30度 → 10cm前進」をLLM生成計画から実行し、全ステップと停止コマンドの成功を確認。
@@ -12,7 +18,7 @@ LLMの学習は行わず、推論APIを利用します。速度制御と停止�
 - 正常4種類・拒否4種類で、再試行を含め期待結果を確認。対応する記録11試行の内訳は成功8・API障害3。初回一括8/8成功ではありません。
 - これは既知の開発用ケースで、未知の指示の一般精度や実機の安全性を示すものではありません。
 
-公開候補作成時に、実際の結果ファイルを照合した集計を `evidence/evaluation_attempts.json` に保存します。元のAPI応答・生ログは公開候補に含めません。
+実際の結果ファイルを照合した集計を `evidence/evaluation_attempts.json` に保存しています。元のAPI応答・生ログは公開候補に含めません。
 
 ## 環境
 
@@ -111,8 +117,12 @@ ros2 topic echo /odom --field twist.twist
 - [動画撮影・編集台本](docs/VIDEO_SCRIPT_JA.md)
 - [提出チェックリスト](docs/SUBMISSION_CHECKLIST_JA.md)
 
-動画URLは撮影・掲載後に追記します。GitHub、YouTube、OmniCampusの公開・提出完了は、このREADMEの作成をもって完了したことにはなりません。
+GitHubでコードと資料を公開し、上記YouTube動画を掲載済みです。OmniCampusへの実提出・受付完了は別途確認します。動画撮影の実行結果は [記録](evidence/demo_video.json) にまとめています。
 
 ## 最終回帰試験（2026-10-25）
 
 現行版でオフライン・模擬試験6群82件が合格しました。準備9、プロセス20、不正計画3、境界値12、プランナー30、評価処理8です。記録はevidence/evaluation_attempts.json内のfinal_regressionを参照してください。
+
+## ライセンス
+
+[Apache License 2.0](LICENSE)。
